@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HCL Assessment</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+
+        .logo {
+            width: 200px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .heading {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            background-color: #333;
+            padding: 15px;
+        }
+
+        .navbar a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        /* Main content */
+        .container {
+            display: flex;
+            padding: 10px;
+        }
+
+        .box {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .about {
+            width: 25%;
+        }
+
+        .notice {
+            width: 45%;
+            text-align: center;
+        }
+
+        .login {
+            width: 30%;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 90%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        input[type="submit"], input[type="reset"], button {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    
+    <div class="header">
+    <img src="https://media.licdn.com/dms/image/v2/C4D0BAQF1O2KM3B4KbA/company-logo_200_200/company-logo_200_200/0/1643560022299?e=2147483647&v=beta&t=IldhkW7u_IRE8mQFqjiAWTZQCs5filBEWpaunTB5Dlk" height="60">
+    <div class="heading">HCL ASSESSMENT</div>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqg0KtMMH4RREUA6kPgf13HtwKENOL2O8MVQ&s" height="60">
+    </div>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Notice</a>
+        <a href="#">Login</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- About HCL -->
+        <div class="box about">
+            <h3>About HCL</h3>
+            <p>
+                HCL Technologies is a global IT services company
+                providing digital, engineering and cloud solutions.
+            </p>
+        </div>
+
+        <!-- Notice -->
+        <div class="box notice">
+            <h3>Notice</h3>
+            <p>HCL Assessment will be conducted next week.</p>
+            <p>Please login to check details.</p>
+        </div>
+
+        <!-- Login Form -->
+        <div class="box login">
+            <h3>Login</h3>
+            <form action="next.html" method="get">
+                <label>User ID</label><br>
+                <input type="text"><br>
+
+                <label>Password</label><br>
+                <input type="password"><br>
+
+                <input type="submit" value="Login">
+                <input type="reset" value="Cancel"><br><br>
+
+                <button type="button">New User</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
