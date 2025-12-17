@@ -1,13 +1,14 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>HCL Assessment</title>
+
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #839ec0, #8fd67b);
+            scroll-behavior: smooth;
         }
 
         /* Header */
@@ -15,43 +16,54 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px;
-            background-color: #f2f2f2;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, #0047ab, #007bff);
+            color: white;
         }
 
-        .logo {
-            width: 200px;
-            text-align: center;
-            font-weight: bold;
+        .header img {
+            height: 60px;
         }
 
         .heading {
-            font-size: 50px;
+            font-size: 42px;
             font-weight: bold;
+            letter-spacing: 2px;
         }
 
         /* Navigation bar */
         .navbar {
-            background-color: #333;
-            padding: 15px;
+            background-color: #1f1f1f;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
         }
 
         .navbar a {
             color: white;
-            margin-right: 15px;
+            margin: 0 20px;
             text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .navbar a:hover {
+            color: #00c3ff;
         }
 
         /* Main content */
         .container {
             display: flex;
-            padding: 10px;
+            gap: 20px;
+            padding: 40px;
         }
 
         .box {
-            border: 1px solid black;
-            padding: 10px;
-            margin: 5px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
 
         .about {
@@ -67,74 +79,171 @@
             width: 30%;
         }
 
+        h3 {
+            color: #0047ab;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        p {
+            color: #333;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* Form */
         input[type="text"], input[type="password"] {
-            width: 90%;
-            padding: 5px;
-            margin: 5px 0;
+            width: 95%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
         }
 
         input[type="submit"], input[type="reset"], button {
-            margin-top: 5px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+        }
+
+        input[type="reset"] {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .login button {
+            background-color: #28a745;
+            color: black;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #545b62;
+        }
+
+        .login button:hover {
+            background-color: #1e7e34;
         }
     </style>
 </head>
+<script>
+function loginValidation() {
+    let userId = document.getElementById("userId").value.trim();
+    let password = document.getElementById("password").value.trim();
+
+    if (userId === "" || password === "") {
+        alert("Please enter both User ID and Password");
+        return;
+    }
+
+    // Redirect with value transfer
+    window.location.href = 
+        "log2.html?userId=" + encodeURIComponent(userId) +
+        "&password=" + encodeURIComponent(password);
+}
+function clearLogin() {
+    document.getElementById("userId").value = "";
+    document.getElementById("password").value = "";
+}
+</script>
+
 <body>
 
     <!-- Header -->
-    
     <div class="header">
-    <img src="https://media.licdn.com/dms/image/v2/C4D0BAQF1O2KM3B4KbA/company-logo_200_200/company-logo_200_200/0/1643560022299?e=2147483647&v=beta&t=IldhkW7u_IRE8mQFqjiAWTZQCs5filBEWpaunTB5Dlk" height="60">
-    <div class="heading">HCL ASSESSMENT</div>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqg0KtMMH4RREUA6kPgf13HtwKENOL2O8MVQ&s" height="60">
+        <img src="https://media.licdn.com/dms/image/v2/C4D0BAQF1O2KM3B4KbA/company-logo_200_200/company-logo_200_200/0/1643560022299?e=2147483647&v=beta&t=IldhkW7u_IRE8mQFqjiAWTZQCs5filBEWpaunTB5Dlk">
+        <div class="heading">HCL ASSESSMENT</div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqg0KtMMH4RREUA6kPgf13HtwKENOL2O8MVQ&s">
     </div>
+
     <!-- Navigation Bar -->
     <div class="navbar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Notice</a>
-        <a href="#">Login</a>
-        <a href="#">Contact</a>
+        <a href="#about">About</a>
+        <a href="#notice">Notice</a>
+        <a href="#login">Login</a>
+        <a href="#contact">Contact</a>
     </div>
 
     <!-- Main Content -->
     <div class="container">
 
         <!-- About HCL -->
-        <div class="box about">
+        <div class="box about" id="about">
             <h3>About HCL</h3>
             <p>
-                HCL Technologies is a global IT services company
-                providing digital, engineering and cloud solutions.
+                HCL Technologies is a leading global IT services company
+                delivering digital, engineering, cloud and AI solutions.
+            </p>
+            <p>
+                Founded in 1976, HCL operates in over 50 countries and
+                serves clients across industries like healthcare, banking,
+                telecom, and manufacturing.
             </p>
         </div>
 
         <!-- Notice -->
-        <div class="box notice">
+        <div class="box notice" id="notice">
             <h3>Notice</h3>
-            <p>HCL Assessment will be conducted next week.</p>
-            <p>Please login to check details.</p>
+            <p><strong>📢 Important Announcement</strong></p>
+            <p>
+                HCL Assessment will be conducted next week for eligible students.
+            </p>
+            <p>
+                Please login to check your assessment date, time and instructions.
+            </p>
         </div>
 
-        <!-- Login Form -->
-        <div class="box login">
+        <!-- Login -->
+         <div class="box login" id="login">
+            <h3>Login</h3>
+            
+            <label>User ID</label>
+            <input type="text" id="userId" placeholder="Enter your User ID">
+
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter your Password">
+
+            <input type="button" value="Login" onclick="loginValidation()">
+            <input type="button" value="Cancel" onclick="clearLogin()">
+
+            
+
+            <br><br>
+            <a href="reg1.html">
+            <button>New User Registration</button>
+            </a>
+        </div>
+
+        <!-- div class="box login" id="login">
             <h3>Login</h3>
             <form action="log1.html" method="get">
-                <label>User ID</label><br>
-                <input type="text" placeholder="Please enter the userId"><br>
+                <label>User ID</label>
+                <input type="text" placeholder="Enter your User ID">
 
-                <label>Password</label><br>
-                <input type="password" placeholder="Please enter the password"><br>
+                <label>Password</label>
+                <input type="password" placeholder="Enter your Password">
 
                 <input type="submit" value="Login">
-                <input type="reset" value="Cancel"><br><br>
-
-                
+                <input type="reset" value="Cancel">
             </form>
-            <a href="reg1.html"><button>New User</button></a></center>
-        </div>
+
+            <a href="reg1.html">
+                <button>New User Registration</button>
+            </a>
+        <div-->
 
     </div>
 
 </body>
 </html>
-
