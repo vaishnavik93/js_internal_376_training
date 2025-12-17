@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1 id="hid1">This is first heading</h1>
+    <h2 id="hid2">This is second heading</h2>
+    <button onclick="fun()">click</button>
+    <button id="bid1">Second</button> 
+<script>
+    document.getElementById("bid1").addEventListener("click",function(){
+        document.getElementById("hid1").innerHTML="value by click event"
+    })
+    function fun()
+    {
+        document.getElementById("hid1").innerHTML="new value"
+    }
+</script>
+</body>
+</html>

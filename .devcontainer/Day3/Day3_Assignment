@@ -1,0 +1,10 @@
+//task 1
+/*let marks = [80, 90, 70, 85, 95]
+let total=marks.reduce((acc,val)=>acc+val,0)
+let n=marks.length
+let result=total/n
+console.log("Average:",result)*/
+//task 2
+let numbers = [1,2,3,4,5,6,7,8,9]; 
+let res=number.filter(n=>n%2==0)
+console.log("Even number:",res)
